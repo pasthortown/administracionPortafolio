@@ -7,16 +7,18 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { PorfolioModule } from './components/porfolio/porfolio.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    PorfolioModule,
     NgbModule,
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
   ],

@@ -1,0 +1,144 @@
+<div class="row mt-2">
+  <h1 class="col-12 text-light" style="text-align: right;">
+     Administración de Portafolio - DSI
+  </h1>
+</div>
+<div class="row p-2">
+  <div class="col-12 mb-3">
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-primary" (click)="refresh()">
+          <i class="fas fa-sync"></i>
+        </button>
+      </div>
+      &nbsp;
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-success" (click)="open_modal(content_costo, 'cost')">
+          <i class="fas fa-dollar-sign"></i>
+        </button>
+        <button type="button" class="btn btn-warning" (click)="open_modal(content_item, 'edit')">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="open_modal(content_item, 'new')">
+          <i class="fas fa-add"></i>
+        </button>
+      </div>
+      &nbsp;
+      <div class="input-group mr-2">
+        <span class="input-group-text">
+          <i class="fas fa-search"></i>
+        </span>
+        <input type="text" [(ngModel)]="filter" class="form-control" placeholder="Buscar..." (input)="filter_table()">
+        <button type="button" class="btn btn-info" (click)="toExcel()">
+          <i class="fas fa-download"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12" style="overflow-x: auto;">
+    <table class="table table-hover" style="min-width: 800px;">
+      <thead>
+        <tr>
+          <th></th>
+          <th><small><strong>No.</strong></small></th>
+          <th><small><strong>Año</strong></small></th>
+          <th><small><strong>Mesa</strong></small></th>
+          <th><small><strong>Título</strong></small></th>
+          <th><small><strong>Descripción</strong></small></th>
+          <th><small><strong>Prioridad</strong></small></th>
+          <th><small><strong>Proyecto SAP</strong></small></th>
+          <th><small><strong>Frente</strong></small></th>
+          <th><small><strong>País</strong></small></th>
+          <th><small><strong>Contacto Requirente</strong></small></th>
+          <th><small><strong>Área</strong></small></th>
+          <th><small><strong>Estado de Aprobación</strong></small></th>
+          <th><small><strong>Progreso</strong></small></th>
+          <th><small><strong>Prioridad Negocio</strong></small></th>
+          <th><small><strong>Prioridad PO</strong></small></th>
+          <th><small><strong>Dependencia</strong></small></th>
+          <th><small><strong>Complejidad</strong></small></th>
+          <th><small><strong>Factor País</strong></small></th>
+          <th><small><strong>Semanas</strong></small></th>
+          <th><small><strong>Personas</strong></small></th>
+          <th><small><strong>Costo Operativo Semanal</strong></small></th>
+          <th><small><strong>Otros Costos</strong></small></th>
+          <th><small><strong>Costo Total</strong></small></th>
+          <th><small><strong>Costos Recurrentes</strong></small></th>
+          <th><small><strong>ROI</strong></small></th>
+          <th><small><strong>Inicio Desarrollo</strong></small></th>
+          <th><small><strong>Fin Desarrollo</strong></small></th>
+          <th><small><strong>Inicio Piloto</strong></small></th>
+          <th><small><strong>Fin Piloto</strong></small></th>
+          <th><small><strong>Inicio Producción</strong></small></th>
+          <th><small><strong>Fin Producción</strong></small></th>
+          <th><small><strong>Notas</strong></small></th>
+          <th><small><strong>ROI 2</strong></small></th>
+          <th><small><strong>ROI 3</strong></small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows" (click)="row_selected = row">
+          <td><small><span *ngIf="row_selected == row" class="far fa-hand-point-right"></span></small></td>
+          <td><small>{{row.Id}}</small></td>
+          <td><small>{{row.Year}}</small></td>
+          <td><small>{{row.AgileGroup}}</small></td>
+          <td><small>{{row.Title}}</small></td>
+          <td><small>{{row.Description}}</small></td>
+          <td><small>{{row.Priority}}</small></td>
+          <td><small>{{row.SapProject}}</small></td>
+          <td><small>{{row.Front}}</small></td>
+          <td><small>{{row.Country}}</small></td>
+          <td><small>{{row.Contact}}</small></td>
+          <td><small>{{row.Area}}</small></td>
+          <td><small>{{row.Approval}}</small></td>
+          <td><small>{{row.Progress}}</small></td>
+          <td><small>{{row.CustomerPriority}}</small></td>
+          <td><small>{{row.PoPriority}}</small></td>
+          <td><small>{{row.Dependency}}</small></td>
+          <td><small>{{row.Complexity}}</small></td>
+          <td><small>{{row.CountryFactor}}</small></td>
+          <td><small>{{row.Weeks}}</small></td>
+          <td><small>{{row.People}}</small></td>
+          <td><small>{{row.LaborCostPerWeek}}</small></td>
+          <td><small>{{row.OtherCosts}}</small></td>
+          <td><small>{{row.Total}}</small></td>
+          <td><small>{{row.RecurrentCosts}}</small></td>
+          <td><small>{{row.Roi}}</small></td>
+          <td><small>{{row.DevelopmentStart}}</small></td>
+          <td><small>{{row.DevelopmentEnd}}</small></td>
+          <td><small>{{row.PilotStart}}</small></td>
+          <td><small>{{row.PilotEnd}}</small></td>
+          <td><small>{{row.DeploymentStart}}</small></td>
+          <td><small>{{row.DeploymentEnd}}</small></td>
+          <td><small>{{row.Notes}}</small></td>
+          <td><small>{{row.Roi2}}</small></td>
+          <td><small>{{row.Roi3}}</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #content_item let-modal>
+  <div class="modal-header">
+     <h4 class="modal-title">Item - {{row_selected.Id}}</h4>
+     <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+        <span>&times;</span>
+     </button>
+  </div>
+  <div class="modal-body">
+     <app-porfolioitem></app-porfolioitem>
+  </div>
+</ng-template>
+
+<ng-template #content_costo let-modal>
+  <div class="modal-header">
+     <h4 class="modal-title">Costo - {{row_selected.Id}}</h4>
+     <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+        <span>&times;</span>
+     </button>
+  </div>
+  <div class="modal-body">
+     <app-porfoliocost></app-porfoliocost>
+  </div>
+</ng-template>

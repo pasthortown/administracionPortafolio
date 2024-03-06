@@ -1,0 +1,237 @@
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="text" class="form-control" id="id" [(ngModel)]="porfolioItem.Id" name="id">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="year">Año:</label>
+      <input type="text" class="form-control" id="year" [(ngModel)]="porfolioItem.Year" name="year">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="agileGroup">Mesa:</label>
+      <input type="text" class="form-control" id="agileGroup" [(ngModel)]="porfolioItem.AgileGroup" name="agileGroup">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input type="text" class="form-control" id="title" [(ngModel)]="porfolioItem.Title" name="title">
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-group">
+      <label for="description">Descripción:</label>
+      <textarea class="form-control" id="description" [(ngModel)]="porfolioItem.Description" name="description"></textarea>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="priority">Prioridad:</label>
+      <input type="text" class="form-control" id="priority" [(ngModel)]="porfolioItem.Priority" name="priority">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="sapProject">Proyecto SAP:</label>
+      <input type="text" class="form-control" id="sapProject" [(ngModel)]="porfolioItem.SapProject" name="sapProject">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="country">País:</label>
+      <input type="text" class="form-control" id="country" [(ngModel)]="porfolioItem.Country" name="country">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="front">Frente:</label>
+      <input type="text" class="form-control" id="front" [(ngModel)]="porfolioItem.Front" name="front">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="contact">Contacto Requirente:</label>
+      <input type="text" class="form-control" id="contact" [(ngModel)]="porfolioItem.Contact" name="contact">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="area">Área:</label>
+      <input type="text" class="form-control" id="area" [(ngModel)]="porfolioItem.Area" name="area">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="approval">Estado de Aprobación:</label>
+      <input type="text" class="form-control" id="approval" [(ngModel)]="porfolioItem.Approval" name="approval">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="progress">Progreso:</label>
+      <input type="text" class="form-control" id="progress" [(ngModel)]="porfolioItem.Progress" name="progress">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="customerPriority">Prioridad Negocio:</label>
+      <input type="text" class="form-control" id="customerPriority" [(ngModel)]="porfolioItem.CustomerPriority" name="customerPriority">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="poPriority">Prioridad PO:</label>
+      <input type="text" class="form-control" id="poPriority" [(ngModel)]="porfolioItem.PoPriority" name="poPriority">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="dependency">Dependencia:</label>
+      <input type="text" class="form-control" id="dependency" [(ngModel)]="porfolioItem.Dependency" name="dependency">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="complexity">Complejidad:</label>
+      <input type="text" class="form-control" id="complexity" [(ngModel)]="porfolioItem.Complexity" name="complexity">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="countryFactor">Factor País:</label>
+      <input type="text" class="form-control" id="countryFactor" [(ngModel)]="porfolioItem.CountryFactor" name="countryFactor">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="weeks">Semanas:</label>
+      <input type="text" class="form-control" id="weeks" [(ngModel)]="porfolioItem.Weeks" name="weeks">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="people">Personas:</label>
+      <input type="text" class="form-control" id="people" [(ngModel)]="porfolioItem.People" name="people">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="laborCostPerWeek">Costo Operativo Semanal:</label>
+      <input type="text" class="form-control" id="laborCostPerWeek" [(ngModel)]="porfolioItem.LaborCostPerWeek" name="laborCostPerWeek">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="otherCosts">Otros Costos:</label>
+      <input type="text" class="form-control" id="otherCosts" [(ngModel)]="porfolioItem.OtherCosts" name="otherCosts">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="total">Costo Total:</label>
+      <input type="text" class="form-control" id="total" [(ngModel)]="porfolioItem.Total" name="total">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="recurrentCosts">Costos Recurrentes:</label>
+      <input type="text" class="form-control" id="recurrentCosts" [(ngModel)]="porfolioItem.RecurrentCosts" name="recurrentCosts">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="roi">ROI:</label>
+      <input type="text" class="form-control" id="roi" [(ngModel)]="porfolioItem.Roi" name="roi">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="roi2">ROI 2:</label>
+      <input type="text" class="form-control" id="roi2" [(ngModel)]="porfolioItem.Roi2" name="roi2">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="roi3">ROI 3:</label>
+      <input type="text" class="form-control" id="roi3" [(ngModel)]="porfolioItem.Roi3" name="roi3">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="developmentStart">Inicio Desarrollo:</label>
+      <input type="date" class="form-control" id="developmentStart" [(ngModel)]="porfolioItem.DevelopmentStart" name="developmentStart">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="developmentEnd">Fin Desarrollo:</label>
+      <input type="date" class="form-control" id="developmentEnd" [(ngModel)]="porfolioItem.DevelopmentEnd" name="developmentEnd">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="pilotStart">Inicio Piloto:</label>
+      <input type="date" class="form-control" id="pilotStart" [(ngModel)]="porfolioItem.PilotStart" name="pilotStart">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="pilotEnd">Fin Piloto:</label>
+      <input type="date" class="form-control" id="pilotEnd" [(ngModel)]="porfolioItem.PilotEnd" name="pilotEnd">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="deploymentStart">Inicio Producción:</label>
+      <input type="date" class="form-control" id="deploymentStart" [(ngModel)]="porfolioItem.DeploymentStart" name="deploymentStart">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="deploymentEnd">Fin Producción:</label>
+      <input type="date" class="form-control" id="deploymentEnd" [(ngModel)]="porfolioItem.DeploymentEnd" name="deploymentEnd">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="form-group">
+      <label for="notes">Notas:</label>
+      <textarea class="form-control" id="notes" [(ngModel)]="porfolioItem.Notes" name="notes"></textarea>
+    </div>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </div>
+</div>

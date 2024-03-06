@@ -3442,19 +3442,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\portfolio\\backend\\backend.csproj",
+      "projectUniqueName": "G:\\Proyectos\\administracionPortafolio\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "D:\\Proyectos\\portfolio\\backend\\backend.csproj",
+      "projectPath": "G:\\Proyectos\\administracionPortafolio\\backend\\backend.csproj",
       "packagesPath": "C:\\Users\\luiss\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\portfolio\\backend\\obj\\",
+      "outputPath": "G:\\Proyectos\\administracionPortafolio\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\luiss\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\luiss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
