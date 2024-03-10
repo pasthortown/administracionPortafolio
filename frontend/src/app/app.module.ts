@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { PorfolioModule } from './components/porfolio/porfolio.module';
+import { PorfoliocostsModule } from './components/porfoliocosts/porfoliocosts.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PorfolioModule } from './components/porfolio/porfolio.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     PorfolioModule,
+    PorfoliocostsModule,
     NgbModule,
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
   ],

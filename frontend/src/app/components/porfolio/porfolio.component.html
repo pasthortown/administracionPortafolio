@@ -1,8 +1,3 @@
-<div class="row mt-2">
-  <h1 class="col-12 text-light" style="text-align: right;">
-     Administración de Portafolio - DSI
-  </h1>
-</div>
 <div class="row p-2">
   <div class="col-12 mb-3">
     <div class="btn-toolbar" role="toolbar">
@@ -13,13 +8,7 @@
       </div>
       &nbsp;
       <div class="btn-group mr-2" role="group">
-        <button type="button" class="btn btn-success" (click)="open_modal(content_costo, 'cost')">
-          <i class="fas fa-dollar-sign"></i>
-        </button>
-        <button type="button" class="btn btn-warning" (click)="open_modal(content_item, 'edit')">
-          <i class="fas fa-edit"></i>
-        </button>
-        <button type="button" class="btn btn-secondary" (click)="open_modal(content_item, 'new')">
+        <button type="button" class="btn btn-success" (click)="add_new_porfolio_item()">
           <i class="fas fa-add"></i>
         </button>
       </div>
@@ -39,7 +28,8 @@
     <table class="table table-hover" style="min-width: 800px;">
       <thead>
         <tr>
-          <th></th>
+          <th>Seleccionado</th>
+          <th>Opciones</th>
           <th><small><strong>No.</strong></small></th>
           <th><small><strong>Año</strong></small></th>
           <th><small><strong>Mesa</strong></small></th>
@@ -77,68 +67,117 @@
         </tr>
       </thead>
       <tbody>
+        <tr *ngIf="newPorfolioItem">
+          <td></td>
+          <th>
+            <div class="btn-group mr-2" role="group">
+              <button type="button" class="btn btn-secondary" (click)="save_porfolio_item()">
+                <i class="fas fa-save"></i>
+              </button>
+            </div>
+          </th>
+          <td><input type="number" disabled [(ngModel)]="new_porfolio_item.Id"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.Year"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.AgileGroup"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Title"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Description"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Priority"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.SapProject"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Front"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Country"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Contact"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Area"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Approval"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.Progress"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.CustomerPriority"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.PoPriority"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Dependency"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.Complexity"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.CountryFactor"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.Weeks"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.People"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.LaborCostPerWeek"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.OtherCosts"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Total"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.RecurrentCosts"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Roi"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.DevelopmentStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DevelopmentStart = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.DevelopmentEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DevelopmentEnd = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.PilotStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.PilotStart = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.PilotEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.PilotEnd = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.DeploymentStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DeploymentStart = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.DeploymentEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DeploymentEnd = $event"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.Notes"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Roi2"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Roi3"/></td>
+        </tr>
         <tr *ngFor="let row of rows" (click)="row_selected = row">
           <td><small><span *ngIf="row_selected == row" class="far fa-hand-point-right"></span></small></td>
-          <td><small>{{row.Id}}</small></td>
-          <td><small>{{row.Year}}</small></td>
-          <td><small>{{row.AgileGroup}}</small></td>
-          <td><small>{{row.Title}}</small></td>
-          <td><small>{{row.Description}}</small></td>
-          <td><small>{{row.Priority}}</small></td>
-          <td><small>{{row.SapProject}}</small></td>
-          <td><small>{{row.Front}}</small></td>
-          <td><small>{{row.Country}}</small></td>
-          <td><small>{{row.Contact}}</small></td>
-          <td><small>{{row.Area}}</small></td>
-          <td><small>{{row.Approval}}</small></td>
-          <td><small>{{row.Progress}}</small></td>
-          <td><small>{{row.CustomerPriority}}</small></td>
-          <td><small>{{row.PoPriority}}</small></td>
-          <td><small>{{row.Dependency}}</small></td>
-          <td><small>{{row.Complexity}}</small></td>
-          <td><small>{{row.CountryFactor}}</small></td>
-          <td><small>{{row.Weeks}}</small></td>
-          <td><small>{{row.People}}</small></td>
-          <td><small>{{row.LaborCostPerWeek}}</small></td>
-          <td><small>{{row.OtherCosts}}</small></td>
-          <td><small>{{row.Total}}</small></td>
-          <td><small>{{row.RecurrentCosts}}</small></td>
-          <td><small>{{row.Roi}}</small></td>
-          <td><small>{{row.DevelopmentStart}}</small></td>
-          <td><small>{{row.DevelopmentEnd}}</small></td>
-          <td><small>{{row.PilotStart}}</small></td>
-          <td><small>{{row.PilotEnd}}</small></td>
-          <td><small>{{row.DeploymentStart}}</small></td>
-          <td><small>{{row.DeploymentEnd}}</small></td>
-          <td><small>{{row.Notes}}</small></td>
-          <td><small>{{row.Roi2}}</small></td>
-          <td><small>{{row.Roi3}}</small></td>
+          <th>
+            <div class="btn-group mr-2" role="group">
+              <button type="button" class="btn btn-success" (click)="open_modal(content_costs)">
+                <i class="fas fa-dollar-sign"></i>
+              </button>
+              <button type="button" class="btn btn-warning" (click)="edit = true">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" (click)="update_porfolio_item()">
+                <i class="fas fa-save"></i>
+              </button>
+              &nbsp;
+              <button type="button" class="btn btn-danger" (click)="delete_porfolio_item()">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </th>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Id"/> <small *ngIf="!edit && row_selected == row">{{row.Id}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Year"/> <small *ngIf="!edit && row_selected == row">{{row.Year}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.AgileGroup"/> <small *ngIf="!edit && row_selected == row">{{row.AgileGroup}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Title"/> <small *ngIf="!edit && row_selected == row">{{row.Title}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Description"/> <small *ngIf="!edit && row_selected == row">{{row.Description}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Priority"/> <small *ngIf="!edit && row_selected == row">{{row.Priority}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.SapProject"/> <small *ngIf="!edit && row_selected == row">{{row.SapProject}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Front"/> <small *ngIf="!edit && row_selected == row">{{row.Front}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Country"/> <small *ngIf="!edit && row_selected == row">{{row.Country}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Contact"/> <small *ngIf="!edit && row_selected == row">{{row.Contact}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Area"/> <small *ngIf="!edit && row_selected == row">{{row.Area}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Approval"/> <small *ngIf="!edit && row_selected == row">{{row.Approval}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Progress"/> <small *ngIf="!edit && row_selected == row">{{row.Progress}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.CustomerPriority"/> <small *ngIf="!edit && row_selected == row">{{row.CustomerPriority}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.PoPriority"/> <small *ngIf="!edit && row_selected == row">{{row.PoPriority}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Dependency"/> <small *ngIf="!edit && row_selected == row">{{row.Dependency}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Complexity"/> <small *ngIf="!edit && row_selected == row">{{row.Complexity}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.CountryFactor"/> <small *ngIf="!edit && row_selected == row">{{row.CountryFactor}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Weeks"/> <small *ngIf="!edit && row_selected == row">{{row.Weeks}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.People"/> <small *ngIf="!edit && row_selected == row">{{row.People}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.LaborCostPerWeek"/> <small *ngIf="!edit && row_selected == row">{{row.LaborCostPerWeek}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.OtherCosts"/> <small *ngIf="!edit && row_selected == row">{{row.OtherCosts}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Total"/> <small *ngIf="!edit && row_selected == row">{{row.Total}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.RecurrentCosts"/> <small *ngIf="!edit && row_selected == row">{{row.RecurrentCosts}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Roi"/> <small *ngIf="!edit && row_selected == row">{{row.Roi}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DevelopmentStart"/> <small *ngIf="!edit && row_selected == row">{{row.DevelopmentStart}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DevelopmentEnd"/> <small *ngIf="!edit && row_selected == row">{{row.DevelopmentEnd}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.PilotStart"/> <small *ngIf="!edit && row_selected == row">{{row.PilotStart}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.PilotEnd"/> <small *ngIf="!edit && row_selected == row">{{row.PilotEnd}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DeploymentStart"/> <small *ngIf="!edit && row_selected == row">{{row.DeploymentStart}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DeploymentEnd"/> <small *ngIf="!edit && row_selected == row">{{row.DeploymentEnd}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Notes"/> <small *ngIf="!edit && row_selected == row">{{row.Notes}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Roi2"/> <small *ngIf="!edit && row_selected == row">{{row.Roi2}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Roi3"/> <small *ngIf="!edit && row_selected == row">{{row.Roi3}}</small></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<ng-template #content_item let-modal>
+<ng-template #content_costs let-modal>
   <div class="modal-header">
-     <h4 class="modal-title">Item - {{row_selected.Id}}</h4>
+     <h4 class="modal-title">Costos asociados al item {{row_selected.Id}} del Portafolio</h4>
      <button type="button" class="close" (click)="modal.dismiss('Cross click')">
         <span>&times;</span>
      </button>
   </div>
   <div class="modal-body">
-     <app-porfolioitem></app-porfolioitem>
-  </div>
-</ng-template>
-
-<ng-template #content_costo let-modal>
-  <div class="modal-header">
-     <h4 class="modal-title">Costo - {{row_selected.Id}}</h4>
-     <button type="button" class="close" (click)="modal.dismiss('Cross click')">
-        <span>&times;</span>
-     </button>
-  </div>
-  <div class="modal-body">
-     <app-porfoliocost></app-porfoliocost>
+     <app-porfoliocosts></app-porfoliocosts>
   </div>
 </ng-template>
