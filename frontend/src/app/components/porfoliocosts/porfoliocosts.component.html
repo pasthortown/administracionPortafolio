@@ -1,1 +1,108 @@
-<p>porfoliocosts works!</p>
+<div class="row p-2">
+  <div class="col-12 mb-3">
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-primary" (click)="refresh()">
+          <i class="fas fa-sync"></i>
+        </button>
+      </div>
+      &nbsp;
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-success" (click)="add_new_porfolio_cost()">
+          <i class="fas fa-add"></i>
+        </button>
+      </div>
+      &nbsp;
+      <div class="input-group mr-2">
+        <span class="input-group-text">
+          <i class="fas fa-search"></i>
+        </span>
+        <input type="text" [(ngModel)]="filter" class="form-control" placeholder="Buscar..." (input)="filter_table()">
+        <button type="button" class="btn btn-info" (click)="toExcel()">
+          <i class="fas fa-download"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12" style="overflow-x: auto;">
+    <table class="table table-hover" style="min-width: 800px;">
+      <thead>
+        <tr>
+          <th>Seleccionado</th>
+          <th>Opciones</th>
+          <th><small><strong>No.</strong></small></th>
+          <th><small><strong>No. Item Portafolio</strong></small></th>
+          <th><small><strong>Código</strong></small></th>
+          <th><small><strong>Título</strong></small></th>
+          <th><small><strong>Descripción</strong></small></th>
+          <th><small><strong>Sub Total</strong></small></th>
+          <th><small><strong>Impuestos</strong></small></th>
+          <th><small><strong>Total</strong></small></th>
+          <th><small><strong>Fecha</strong></small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="newPorfolioCost">
+          <td></td>
+          <th>
+            <div class="btn-group mr-2" role="group">
+              <button type="button" class="btn btn-secondary" (click)="save_porfolio_cost()">
+                <i class="fas fa-save"></i>
+              </button>
+            </div>
+          </th>
+          <td><input type="number" disabled [(ngModel)]="new_porfolio_cost.Id"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_cost.PorfolioItemId"/></td>
+          <td><input [(ngModel)]="new_porfolio_cost.Code"/></td>
+          <td><input [(ngModel)]="new_porfolio_cost.Title"/></td>
+          <td><input [(ngModel)]="new_porfolio_cost.Description"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_cost.SubTotal"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_cost.Taxes"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_cost.Total"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_cost.Date | date:'y-MM-dd'" (ngModelChange)="new_porfolio_cost.Date = $event"/></td>
+        </tr>
+        <tr *ngFor="let row of rows" (click)="row_selected = row">
+          <td><small><span *ngIf="row_selected == row" class="far fa-hand-point-right"></span></small></td>
+          <th>
+            <div class="btn-group mr-2" role="group">
+              <button type="button" class="btn btn-success">
+                <i class="fas fa-dollar-sign"></i>
+              </button>
+              <button type="button" class="btn btn-warning" (click)="edit = true">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" (click)="update_porfolio_cost()">
+                <i class="fas fa-save"></i>
+              </button>
+              &nbsp;
+              <button type="button" class="btn btn-danger" (click)="delete_porfolio_cost()">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </th>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Id"/> <small *ngIf="!edit && row_selected == row">{{row.Id}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.PorfolioItemId"/> <small *ngIf="!edit && row_selected == row">{{row.PorfolioItemId}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Code"/> <small *ngIf="!edit && row_selected == row">{{row.Code}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Title"/> <small *ngIf="!edit && row_selected == row">{{row.Title}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Description"/> <small *ngIf="!edit && row_selected == row">{{row.Description}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.SubTotal"/> <small *ngIf="!edit && row_selected == row">{{row.SubTotal}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Taxes"/> <small *ngIf="!edit && row_selected == row">{{row.Taxes}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Total"/> <small *ngIf="!edit && row_selected == row">{{row.Total}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.Date"/> <small *ngIf="!edit && row_selected == row">{{row.Date}}</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #content_costs let-modal>
+  <div class="modal-header">
+     <h4 class="modal-title">Costos asociados al item {{row_selected.Id}} del Portafolio</h4>
+     <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+        <span>&times;</span>
+     </button>
+  </div>
+  <div class="modal-body">
+     <app-porfoliocosts></app-porfoliocosts>
+  </div>
+</ng-template>

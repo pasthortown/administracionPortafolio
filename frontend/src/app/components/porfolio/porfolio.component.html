@@ -78,22 +78,130 @@
           </th>
           <td><input type="number" disabled [(ngModel)]="new_porfolio_item.Id"/></td>
           <td><input type="number" [(ngModel)]="new_porfolio_item.Year"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.AgileGroup"/></td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.AgileGroup">
+              <option value="">Seleccione...</option>
+              <option value="MAXPOINT LEGACY">MAXPOINT LEGACY</option>
+              <option value="MAXPOINT NUEVO">MAXPOINT NUEVO</option>
+              <option value="SIR">SIR</option>
+              <option value="CANALES DIGITALES">CANALES DIGITALES</option>
+              <option value="SISTEMAS INTERNOS">SISTEMAS INTERNOS</option>
+              <option value="ERP">ERP</option>
+              <option value="SAP">SAP</option>
+              <option value="BI">BI</option>
+              <option value="Devsecops">Devsecops</option>
+            </select>
+          </td>
           <td><input [(ngModel)]="new_porfolio_item.Title"/></td>
           <td><input [(ngModel)]="new_porfolio_item.Description"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.Priority"/></td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.Priority">
+              <option value="">Seleccione...</option>
+              <option value="BAJA">BAJA</option>
+              <option value="MADIA">MADIA</option>
+              <option value="ALTA">ALTA</option>
+            </select>
+          </td>
           <td><input [(ngModel)]="new_porfolio_item.SapProject"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.Front"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.Country"/></td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.Front">
+              <option value="">Seleccione...</option>
+              <option value="CAR">CAR</option>
+              <option value="DSI">DSI</option>
+              <option value="OPERACIONES">OPERACIONES</option>
+              <option value="PLANTA">PLANTA</option>
+              <option value="REGIONAL">REGIONAL</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.Country">
+              <option value="">Seleccione...</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Chile">Chile</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="España">España</option>
+              <option value="Venezuela">Venezuela</option>
+            </select>
+          </td>
           <td><input [(ngModel)]="new_porfolio_item.Contact"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.Area"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.Approval"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.Progress"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.CustomerPriority"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.PoPriority"/></td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.Area">
+              <option value="">Seleccione...</option>
+              <option value="AEROPUERTO GYE">AEROPUERTO GYE</option>
+              <option value="AEROPUERTO UIO">AEROPUERTO UIO</option>
+              <option value="AR">AR</option>
+              <option value="AUDITORIA">AUDITORIA</option>
+              <option value="BI">BI</option>
+              <option value="BODEGA">BODEGA</option>
+              <option value="CALIDAD">CALIDAD</option>
+              <option value="CAPACITACIÓN INTERNA">CAPACITACIÓN INTERNA</option>
+              <option value="CL">CL</option>
+              <option value="CO">CO</option>
+              <option value="COMPRAS">COMPRAS</option>
+              <option value="CONTABILIDAD">CONTABILIDAD</option>
+              <option value="CONTABILIDAD Y SAP">CONTABILIDAD Y SAP</option>
+              <option value="DSI">DSI</option>
+              <option value="ES">ES</option>
+              <option value="GESTIÓN">GESTIÓN</option>
+              <option value="IT">IT</option>
+              <option value="LOGÍSTICA">LOGÍSTICA</option>
+              <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+              <option value="MERCADEO KFC">MERCADEO KFC</option>
+              <option value="MERCADEO OTRAS MARCAS">MERCADEO OTRAS MARCAS</option>
+              <option value="NÓMINA">NÓMINA</option>
+              <option value="OPERACIONES">OPERACIONES</option>
+              <option value="OPERACIONES KFC">OPERACIONES KFC</option>
+              <option value="OTROS NEGOCIOS">OTROS NEGOCIOS</option>
+              <option value="PLANTAS">PLANTAS</option>
+              <option value="PRODUCCIÓN">PRODUCCIÓN</option>
+              <option value="PROYECTOS DE CONSTRUCCIÓN">PROYECTOS DE CONSTRUCCIÓN</option>
+              <option value="TRANSFORMACIÓN DIGITAL">TRANSFORMACIÓN DIGITAL</option>
+              <option value="TESORERÍA">TESORERÍA</option>
+              <option value="VE">VE</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.Approval">
+              <option value="">Seleccione...</option>
+              <option value="APROBADO">APROBADO</option>
+              <option value="IDENTIFICADO">IDENTIFICADO</option>
+              <option value="SUSPENDIDO">SUSPENDIDO</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.Progress">
+              <option value="">Seleccione...</option>
+              <option value="Cancelado">Cancelado</option>
+              <option value="En curso">En curso</option>
+              <option value="Finalizado">Finalizado</option>
+              <option value="Identificado">Identificado</option>
+              <option value="Iniciado">Iniciado</option>
+              <option value="No iniciado">No iniciado</option>
+              <option value="Por Levantar">Por Levantar</option>
+              <option value="Pruebas">Pruebas</option>
+            </select>
+          </td>
+          <td><input type="text" [(ngModel)]="new_porfolio_item.CustomerPriority"/></td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.PoPriority">
+              <option value="">Seleccione...</option>
+              <option value="Q1">Q1</option>
+              <option value="Q2">Q2</option>
+              <option value="Q3">Q3</option>
+              <option value="Q4">Q4</option>
+            </select>
+          </td>
           <td><input [(ngModel)]="new_porfolio_item.Dependency"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.Complexity"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.CountryFactor"/></td>
+          <td>
+            <select [(ngModel)]="new_porfolio_item.Complexity">
+              <option value="">Seleccione...</option>
+              <option value="BAJA">BAJA</option>
+              <option value="MADIA">MADIA</option>
+              <option value="ALTA">ALTA</option>
+            </select>
+          </td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.CountryFactor"/></td>
           <td><input type="number" [(ngModel)]="new_porfolio_item.Weeks"/></td>
           <td><input type="number" [(ngModel)]="new_porfolio_item.People"/></td>
           <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.LaborCostPerWeek"/></td>
@@ -132,22 +240,121 @@
           </th>
           <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Id"/> <small *ngIf="!edit && row_selected == row">{{row.Id}}</small></td>
           <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Year"/> <small *ngIf="!edit && row_selected == row">{{row.Year}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.AgileGroup"/> <small *ngIf="!edit && row_selected == row">{{row.AgileGroup}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.AgileGroup">
+              <option value="">Seleccione...</option>
+              <option value="MAXPOINT LEGACY">MAXPOINT LEGACY</option>
+              <option value="MAXPOINT NUEVO">MAXPOINT NUEVO</option>
+              <option value="SIR">SIR</option>
+              <option value="CANALES DIGITALES">CANALES DIGITALES</option>
+              <option value="SISTEMAS INTERNOS">SISTEMAS INTERNOS</option>
+              <option value="ERP">ERP</option>
+              <option value="SAP">SAP</option>
+              <option value="BI">BI</option>
+              <option value="Devsecops">Devsecops</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.AgileGroup}}</small></td>
           <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Title"/> <small *ngIf="!edit && row_selected == row">{{row.Title}}</small></td>
           <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Description"/> <small *ngIf="!edit && row_selected == row">{{row.Description}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Priority"/> <small *ngIf="!edit && row_selected == row">{{row.Priority}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Priority">
+              <option value="">Seleccione...</option>
+              <option value="BAJA">BAJA</option>
+              <option value="MADIA">MADIA</option>
+              <option value="ALTA">ALTA</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.Priority}}</small></td>
           <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.SapProject"/> <small *ngIf="!edit && row_selected == row">{{row.SapProject}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Front"/> <small *ngIf="!edit && row_selected == row">{{row.Front}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Country"/> <small *ngIf="!edit && row_selected == row">{{row.Country}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Front">
+              <option value="">Seleccione...</option>
+              <option value="CAR">CAR</option>
+              <option value="DSI">DSI</option>
+              <option value="OPERACIONES">OPERACIONES</option>
+              <option value="PLANTA">PLANTA</option>
+              <option value="REGIONAL">REGIONAL</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.Front}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Country">
+              <option value="">Seleccione...</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Chile">Chile</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="España">España</option>
+              <option value="Venezuela">Venezuela</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.Country}}</small></td>
           <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Contact"/> <small *ngIf="!edit && row_selected == row">{{row.Contact}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Area"/> <small *ngIf="!edit && row_selected == row">{{row.Area}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Approval"/> <small *ngIf="!edit && row_selected == row">{{row.Approval}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Progress"/> <small *ngIf="!edit && row_selected == row">{{row.Progress}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Area">
+              <option value="">Seleccione...</option>
+              <option value="AEROPUERTO GYE">AEROPUERTO GYE</option>
+              <option value="AEROPUERTO UIO">AEROPUERTO UIO</option>
+              <option value="AR">AR</option>
+              <option value="AUDITORIA">AUDITORIA</option>
+              <option value="BI">BI</option>
+              <option value="BODEGA">BODEGA</option>
+              <option value="CALIDAD">CALIDAD</option>
+              <option value="CAPACITACIÓN INTERNA">CAPACITACIÓN INTERNA</option>
+              <option value="CL">CL</option>
+              <option value="CO">CO</option>
+              <option value="COMPRAS">COMPRAS</option>
+              <option value="CONTABILIDAD">CONTABILIDAD</option>
+              <option value="CONTABILIDAD Y SAP">CONTABILIDAD Y SAP</option>
+              <option value="DSI">DSI</option>
+              <option value="ES">ES</option>
+              <option value="GESTIÓN">GESTIÓN</option>
+              <option value="IT">IT</option>
+              <option value="LOGÍSTICA">LOGÍSTICA</option>
+              <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+              <option value="MERCADEO KFC">MERCADEO KFC</option>
+              <option value="MERCADEO OTRAS MARCAS">MERCADEO OTRAS MARCAS</option>
+              <option value="NÓMINA">NÓMINA</option>
+              <option value="OPERACIONES">OPERACIONES</option>
+              <option value="OPERACIONES KFC">OPERACIONES KFC</option>
+              <option value="OTROS NEGOCIOS">OTROS NEGOCIOS</option>
+              <option value="PLANTAS">PLANTAS</option>
+              <option value="PRODUCCIÓN">PRODUCCIÓN</option>
+              <option value="PROYECTOS DE CONSTRUCCIÓN">PROYECTOS DE CONSTRUCCIÓN</option>
+              <option value="TRANSFORMACIÓN DIGITAL">TRANSFORMACIÓN DIGITAL</option>
+              <option value="TESORERÍA">TESORERÍA</option>
+              <option value="VE">VE</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.Area}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Approval">
+              <option value="">Seleccione...</option>
+              <option value="APROBADO">APROBADO</option>
+              <option value="IDENTIFICADO">IDENTIFICADO</option>
+              <option value="SUSPENDIDO">SUSPENDIDO</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.Approval}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Progress">
+              <option value="">Seleccione...</option>
+              <option value="Cancelado">Cancelado</option>
+              <option value="En curso">En curso</option>
+              <option value="Finalizado">Finalizado</option>
+              <option value="Identificado">Identificado</option>
+              <option value="Iniciado">Iniciado</option>
+              <option value="No iniciado">No iniciado</option>
+              <option value="Por Levantar">Por Levantar</option>
+              <option value="Pruebas">Pruebas</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.Progress}}</small></td>
           <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.CustomerPriority"/> <small *ngIf="!edit && row_selected == row">{{row.CustomerPriority}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.PoPriority"/> <small *ngIf="!edit && row_selected == row">{{row.PoPriority}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.PoPriority">
+              <option value="">Seleccione...</option>
+              <option value="Q1">Q1</option>
+              <option value="Q2">Q2</option>
+              <option value="Q3">Q3</option>
+              <option value="Q4">Q4</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.PoPriority}}</small></td>
           <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Dependency"/> <small *ngIf="!edit && row_selected == row">{{row.Dependency}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Complexity"/> <small *ngIf="!edit && row_selected == row">{{row.Complexity}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.CountryFactor"/> <small *ngIf="!edit && row_selected == row">{{row.CountryFactor}}</small></td>
+          <td>
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Complexity">
+              <option value="">Seleccione...</option>
+              <option value="BAJA">BAJA</option>
+              <option value="MADIA">MADIA</option>
+              <option value="ALTA">ALTA</option>
+            </select> <small *ngIf="!edit && row_selected == row">{{row.Complexity}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.CountryFactor"/> <small *ngIf="!edit && row_selected == row">{{row.CountryFactor}}</small></td>
           <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Weeks"/> <small *ngIf="!edit && row_selected == row">{{row.Weeks}}</small></td>
           <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.People"/> <small *ngIf="!edit && row_selected == row">{{row.People}}</small></td>
           <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.LaborCostPerWeek"/> <small *ngIf="!edit && row_selected == row">{{row.LaborCostPerWeek}}</small></td>

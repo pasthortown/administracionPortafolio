@@ -35,7 +35,7 @@ namespace Backend.Infrastructure
             modelBuilder.Entity<PorfolioItem>().Property(v => v.Roi).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<PorfolioItem>().Property(v => v.Roi2).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<PorfolioItem>().Property(v => v.Roi3).HasColumnType("decimal(18,2)");   
-            
+            modelBuilder.Entity<PorfolioItem>().Property(v => v.CountryFactor).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<PorfolioCost>().Property(v => v.SubTotal).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<PorfolioCost>().Property(v => v.Taxes).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<PorfolioCost>().Property(v => v.Total).HasColumnType("decimal(18,2)");

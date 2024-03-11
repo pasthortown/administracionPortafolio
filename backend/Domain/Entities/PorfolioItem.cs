@@ -16,12 +16,12 @@ namespace Backend.Domain.Entities
         public string Contact { get; set; }
         public string Area { get; set; }
         public string Approval { get; set; }
-        public int Progress { get; set; }
-        public int CustomerPriority { get; set; }
-        public int PoPriority { get; set; }
+        public string Progress { get; set; }
+        public string CustomerPriority { get; set; }
+        public string PoPriority { get; set; }
         public string Dependency { get; set; }
         public int Complexity { get; set; }
-        public int CountryFactor { get; set; }
+        public decimal CountryFactor { get; set; }
         public int Weeks { get; set; }
         public int People { get; set; }
         public decimal LaborCostPerWeek { get; set; }
@@ -54,9 +54,9 @@ namespace Backend.Domain.Entities
             Dependency = string.Empty;
             Notes = string.Empty;
             Year = 0;
-            CustomerPriority = 0;
-            PoPriority = 0;
-            Progress = 0;
+            CustomerPriority = string.Empty;
+            PoPriority = string.Empty;
+            Progress = string.Empty;
             Complexity = 0;
             CountryFactor = 0;
             Weeks = 0;
