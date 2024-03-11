@@ -64,6 +64,7 @@
           <th><small><strong>Notas</strong></small></th>
           <th><small><strong>ROI 2</strong></small></th>
           <th><small><strong>ROI 3</strong></small></th>
+          <th>Opciones</th>
         </tr>
       </thead>
       <tbody>
@@ -76,10 +77,10 @@
               </button>
             </div>
           </th>
-          <td><input type="number" disabled [(ngModel)]="new_porfolio_item.Id"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.Year"/></td>
+          <td><input type="number" disabled [(ngModel)]="new_porfolio_item.id"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.year"/></td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.AgileGroup">
+            <select [(ngModel)]="new_porfolio_item.agileGroup">
               <option value="">Seleccione...</option>
               <option value="MAXPOINT LEGACY">MAXPOINT LEGACY</option>
               <option value="MAXPOINT NUEVO">MAXPOINT NUEVO</option>
@@ -92,19 +93,19 @@
               <option value="Devsecops">Devsecops</option>
             </select>
           </td>
-          <td><input [(ngModel)]="new_porfolio_item.Title"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.Description"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.title"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.description"/></td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.Priority">
+            <select [(ngModel)]="new_porfolio_item.priority">
               <option value="">Seleccione...</option>
               <option value="BAJA">BAJA</option>
               <option value="MADIA">MADIA</option>
               <option value="ALTA">ALTA</option>
             </select>
           </td>
-          <td><input [(ngModel)]="new_porfolio_item.SapProject"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.sapProject"/></td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.Front">
+            <select [(ngModel)]="new_porfolio_item.front">
               <option value="">Seleccione...</option>
               <option value="CAR">CAR</option>
               <option value="DSI">DSI</option>
@@ -114,7 +115,7 @@
             </select>
           </td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.Country">
+            <select [(ngModel)]="new_porfolio_item.country">
               <option value="">Seleccione...</option>
               <option value="Argentina">Argentina</option>
               <option value="Chile">Chile</option>
@@ -124,9 +125,9 @@
               <option value="Venezuela">Venezuela</option>
             </select>
           </td>
-          <td><input [(ngModel)]="new_porfolio_item.Contact"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.contact"/></td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.Area">
+            <select [(ngModel)]="new_porfolio_item.area">
               <option value="">Seleccione...</option>
               <option value="AEROPUERTO GYE">AEROPUERTO GYE</option>
               <option value="AEROPUERTO UIO">AEROPUERTO UIO</option>
@@ -162,7 +163,7 @@
             </select>
           </td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.Approval">
+            <select [(ngModel)]="new_porfolio_item.approval">
               <option value="">Seleccione...</option>
               <option value="APROBADO">APROBADO</option>
               <option value="IDENTIFICADO">IDENTIFICADO</option>
@@ -170,7 +171,7 @@
             </select>
           </td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.Progress">
+            <select [(ngModel)]="new_porfolio_item.progress">
               <option value="">Seleccione...</option>
               <option value="Cancelado">Cancelado</option>
               <option value="En curso">En curso</option>
@@ -182,9 +183,9 @@
               <option value="Pruebas">Pruebas</option>
             </select>
           </td>
-          <td><input type="text" [(ngModel)]="new_porfolio_item.CustomerPriority"/></td>
+          <td><input type="text" [(ngModel)]="new_porfolio_item.customerPriority"/></td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.PoPriority">
+            <select [(ngModel)]="new_porfolio_item.poPriority">
               <option value="">Seleccione...</option>
               <option value="Q1">Q1</option>
               <option value="Q2">Q2</option>
@@ -192,56 +193,56 @@
               <option value="Q4">Q4</option>
             </select>
           </td>
-          <td><input [(ngModel)]="new_porfolio_item.Dependency"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.dependency"/></td>
           <td>
-            <select [(ngModel)]="new_porfolio_item.Complexity">
+            <select [(ngModel)]="new_porfolio_item.complexity">
               <option value="">Seleccione...</option>
               <option value="BAJA">BAJA</option>
               <option value="MADIA">MADIA</option>
               <option value="ALTA">ALTA</option>
             </select>
           </td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.CountryFactor"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.Weeks"/></td>
-          <td><input type="number" [(ngModel)]="new_porfolio_item.People"/></td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.LaborCostPerWeek"/></td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.OtherCosts"/></td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Total"/></td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.RecurrentCosts"/></td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Roi"/></td>
-          <td><input type="date" [ngModel]="new_porfolio_item.DevelopmentStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DevelopmentStart = $event"/></td>
-          <td><input type="date" [ngModel]="new_porfolio_item.DevelopmentEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DevelopmentEnd = $event"/></td>
-          <td><input type="date" [ngModel]="new_porfolio_item.PilotStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.PilotStart = $event"/></td>
-          <td><input type="date" [ngModel]="new_porfolio_item.PilotEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.PilotEnd = $event"/></td>
-          <td><input type="date" [ngModel]="new_porfolio_item.DeploymentStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DeploymentStart = $event"/></td>
-          <td><input type="date" [ngModel]="new_porfolio_item.DeploymentEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.DeploymentEnd = $event"/></td>
-          <td><input [(ngModel)]="new_porfolio_item.Notes"/></td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Roi2"/></td>
-          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.Roi3"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.countryFactor"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.weeks"/></td>
+          <td><input type="number" [(ngModel)]="new_porfolio_item.people"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.laborCostPerWeek"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.otherCosts"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.total"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.recurrentCosts"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.roi"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.developmentStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.developmentStart = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.developmentEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.developmentEnd = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.pilotStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.pilotStart = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.pilotEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.pilotEnd = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.deploymentStart | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.deploymentStart = $event"/></td>
+          <td><input type="date" [ngModel]="new_porfolio_item.deploymentEnd | date:'y-MM-dd'" (ngModelChange)="new_porfolio_item.deploymentEnd = $event"/></td>
+          <td><input [(ngModel)]="new_porfolio_item.notes"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.roi2"/></td>
+          <td><input type="number" step="0.1" [(ngModel)]="new_porfolio_item.roi3"/></td>
         </tr>
-        <tr *ngFor="let row of rows" (click)="row_selected = row">
+        <tr *ngFor="let row of rows" (click)="select_row(row)">
           <td><small><span *ngIf="row_selected == row" class="far fa-hand-point-right"></span></small></td>
           <th>
             <div class="btn-group mr-2" role="group">
-              <button type="button" class="btn btn-success" (click)="open_modal(content_costs)">
+              <button type="button" *ngIf="row_selected == row" class="btn btn-success" (click)="open_modal(content_costs)">
                 <i class="fas fa-dollar-sign"></i>
               </button>
-              <button type="button" class="btn btn-warning" (click)="edit = true">
+              <button type="button" *ngIf="row_selected == row" [hidden]="edit && row_selected == row" class="btn btn-warning" (click)="edit = true">
                 <i class="fas fa-edit"></i>
               </button>
-              <button type="button" class="btn btn-secondary" (click)="update_porfolio_item()">
+              <button type="button" *ngIf="edit && row_selected == row" class="btn btn-secondary" (click)="update_porfolio_item()">
                 <i class="fas fa-save"></i>
               </button>
               &nbsp;
-              <button type="button" class="btn btn-danger" (click)="delete_porfolio_item()">
+              <button type="button" *ngIf="row_selected == row" class="btn btn-danger" (click)="delete_porfolio_item()">
                 <i class="fas fa-trash"></i>
               </button>
             </div>
           </th>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Id"/> <small *ngIf="!edit && row_selected == row">{{row.Id}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Year"/> <small *ngIf="!edit && row_selected == row">{{row.Year}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.id"/> <small [hidden]="edit && row_selected == row">{{row.id}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.year"/> <small [hidden]="edit && row_selected == row">{{row.year}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.AgileGroup">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.agileGroup">
               <option value="">Seleccione...</option>
               <option value="MAXPOINT LEGACY">MAXPOINT LEGACY</option>
               <option value="MAXPOINT NUEVO">MAXPOINT NUEVO</option>
@@ -252,28 +253,28 @@
               <option value="SAP">SAP</option>
               <option value="BI">BI</option>
               <option value="Devsecops">Devsecops</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.AgileGroup}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Title"/> <small *ngIf="!edit && row_selected == row">{{row.Title}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Description"/> <small *ngIf="!edit && row_selected == row">{{row.Description}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.agileGroup}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.title"/> <small [hidden]="edit && row_selected == row">{{row.title}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.description"/> <small [hidden]="edit && row_selected == row">{{row.description}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Priority">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.priority">
               <option value="">Seleccione...</option>
               <option value="BAJA">BAJA</option>
               <option value="MADIA">MADIA</option>
               <option value="ALTA">ALTA</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.Priority}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.SapProject"/> <small *ngIf="!edit && row_selected == row">{{row.SapProject}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.priority}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.sapProject"/> <small [hidden]="edit && row_selected == row">{{row.sapProject}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Front">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.front">
               <option value="">Seleccione...</option>
               <option value="CAR">CAR</option>
               <option value="DSI">DSI</option>
               <option value="OPERACIONES">OPERACIONES</option>
               <option value="PLANTA">PLANTA</option>
               <option value="REGIONAL">REGIONAL</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.Front}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.front}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Country">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.country">
               <option value="">Seleccione...</option>
               <option value="Argentina">Argentina</option>
               <option value="Chile">Chile</option>
@@ -281,10 +282,10 @@
               <option value="Ecuador">Ecuador</option>
               <option value="España">España</option>
               <option value="Venezuela">Venezuela</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.Country}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Contact"/> <small *ngIf="!edit && row_selected == row">{{row.Contact}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.country}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.contact"/> <small [hidden]="edit && row_selected == row">{{row.contact}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Area">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.area">
               <option value="">Seleccione...</option>
               <option value="AEROPUERTO GYE">AEROPUERTO GYE</option>
               <option value="AEROPUERTO UIO">AEROPUERTO UIO</option>
@@ -317,16 +318,16 @@
               <option value="TRANSFORMACIÓN DIGITAL">TRANSFORMACIÓN DIGITAL</option>
               <option value="TESORERÍA">TESORERÍA</option>
               <option value="VE">VE</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.Area}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.area}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Approval">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.approval">
               <option value="">Seleccione...</option>
               <option value="APROBADO">APROBADO</option>
               <option value="IDENTIFICADO">IDENTIFICADO</option>
               <option value="SUSPENDIDO">SUSPENDIDO</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.Approval}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.approval}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Progress">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.progress">
               <option value="">Seleccione...</option>
               <option value="Cancelado">Cancelado</option>
               <option value="En curso">En curso</option>
@@ -336,41 +337,58 @@
               <option value="No iniciado">No iniciado</option>
               <option value="Por Levantar">Por Levantar</option>
               <option value="Pruebas">Pruebas</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.Progress}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.CustomerPriority"/> <small *ngIf="!edit && row_selected == row">{{row.CustomerPriority}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.progress}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.customerPriority"/> <small [hidden]="edit && row_selected == row">{{row.customerPriority}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.PoPriority">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.poPriority">
               <option value="">Seleccione...</option>
               <option value="Q1">Q1</option>
               <option value="Q2">Q2</option>
               <option value="Q3">Q3</option>
               <option value="Q4">Q4</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.PoPriority}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Dependency"/> <small *ngIf="!edit && row_selected == row">{{row.Dependency}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.poPriority}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.dependency"/> <small [hidden]="edit && row_selected == row">{{row.dependency}}</small></td>
           <td>
-            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.Complexity">
+            <select *ngIf="edit && row_selected == row" [(ngModel)]="row.complexity">
               <option value="">Seleccione...</option>
               <option value="BAJA">BAJA</option>
               <option value="MADIA">MADIA</option>
               <option value="ALTA">ALTA</option>
-            </select> <small *ngIf="!edit && row_selected == row">{{row.Complexity}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.CountryFactor"/> <small *ngIf="!edit && row_selected == row">{{row.CountryFactor}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.Weeks"/> <small *ngIf="!edit && row_selected == row">{{row.Weeks}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.People"/> <small *ngIf="!edit && row_selected == row">{{row.People}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.LaborCostPerWeek"/> <small *ngIf="!edit && row_selected == row">{{row.LaborCostPerWeek}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.OtherCosts"/> <small *ngIf="!edit && row_selected == row">{{row.OtherCosts}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Total"/> <small *ngIf="!edit && row_selected == row">{{row.Total}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.RecurrentCosts"/> <small *ngIf="!edit && row_selected == row">{{row.RecurrentCosts}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Roi"/> <small *ngIf="!edit && row_selected == row">{{row.Roi}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DevelopmentStart"/> <small *ngIf="!edit && row_selected == row">{{row.DevelopmentStart}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DevelopmentEnd"/> <small *ngIf="!edit && row_selected == row">{{row.DevelopmentEnd}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.PilotStart"/> <small *ngIf="!edit && row_selected == row">{{row.PilotStart}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.PilotEnd"/> <small *ngIf="!edit && row_selected == row">{{row.PilotEnd}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DeploymentStart"/> <small *ngIf="!edit && row_selected == row">{{row.DeploymentStart}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.DeploymentEnd"/> <small *ngIf="!edit && row_selected == row">{{row.DeploymentEnd}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.Notes"/> <small *ngIf="!edit && row_selected == row">{{row.Notes}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Roi2"/> <small *ngIf="!edit && row_selected == row">{{row.Roi2}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.Roi3"/> <small *ngIf="!edit && row_selected == row">{{row.Roi3}}</small></td>
+            </select> <small [hidden]="edit && row_selected == row">{{row.complexity}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.countryFactor"/> <small [hidden]="edit && row_selected == row">{{row.countryFactor}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.weeks"/> <small [hidden]="edit && row_selected == row">{{row.weeks}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.people"/> <small [hidden]="edit && row_selected == row">{{row.people}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.laborCostPerWeek"/> <small [hidden]="edit && row_selected == row">${{row.laborCostPerWeek | number:'1.2-2'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.otherCosts"/> <small [hidden]="edit && row_selected == row">${{row.otherCosts | number:'1.2-2'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.total"/> <small [hidden]="edit && row_selected == row">${{row.total | number:'1.2-2'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.recurrentCosts"/> <small [hidden]="edit && row_selected == row">${{row.recurrentCosts | number:'1.2-2'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.roi"/> <small [hidden]="edit && row_selected == row">{{row.roi | number:'1.2-2'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.developmentStart"/> <small [hidden]="edit && row_selected == row">{{row.developmentStart | date: 'y-MM-dd'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.developmentEnd"/> <small [hidden]="edit && row_selected == row">{{row.developmentEnd | date: 'y-MM-dd'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.pilotStart"/> <small [hidden]="edit && row_selected == row">{{row.pilotStart | date: 'y-MM-dd'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.pilotEnd"/> <small [hidden]="edit && row_selected == row">{{row.pilotEnd | date: 'y-MM-dd'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.deploymentStart"/> <small [hidden]="edit && row_selected == row">{{row.deploymentStart | date: 'y-MM-dd'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="date" [(ngModel)]="row.deploymentEnd"/> <small [hidden]="edit && row_selected == row">{{row.deploymentEnd | date: 'y-MM-dd'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.notes"/> <small [hidden]="edit && row_selected == row">{{row.notes}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.roi2"/> <small [hidden]="edit && row_selected == row">{{row.roi2 | number:'1.2-2'}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" type="number" step="0.1" [(ngModel)]="row.roi3"/> <small [hidden]="edit && row_selected == row">{{row.roi3 | number:'1.2-2'}}</small></td>
+          <th>
+            <div class="btn-group mr-2" role="group">
+              <button type="button" *ngIf="row_selected == row" class="btn btn-success" (click)="open_modal(content_costs)">
+                <i class="fas fa-dollar-sign"></i>
+              </button>
+              <button type="button" *ngIf="row_selected == row" [hidden]="edit && row_selected == row" class="btn btn-warning" (click)="edit = true">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" *ngIf="edit && row_selected == row" class="btn btn-secondary" (click)="update_porfolio_item()">
+                <i class="fas fa-save"></i>
+              </button>
+              &nbsp;
+              <button type="button" *ngIf="row_selected == row" class="btn btn-danger" (click)="delete_porfolio_item()">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </th>
         </tr>
       </tbody>
     </table>
@@ -379,12 +397,12 @@
 
 <ng-template #content_costs let-modal>
   <div class="modal-header">
-     <h4 class="modal-title">Costos asociados al item {{row_selected.Id}} del Portafolio</h4>
-     <button type="button" class="close" (click)="modal.dismiss('Cross click')">
-        <span>&times;</span>
+     <h4 class="modal-title">Costos asociados al item {{row_selected.id}} del Portafolio</h4>
+     <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
      </button>
   </div>
   <div class="modal-body">
-     <app-porfoliocosts></app-porfoliocosts>
+     <app-porfoliocosts [porfolioItemid]="row_selected.id"></app-porfoliocosts>
   </div>
 </ng-template>

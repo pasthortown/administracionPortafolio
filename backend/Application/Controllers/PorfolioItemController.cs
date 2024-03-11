@@ -24,11 +24,11 @@ namespace Backend.Application.Controllers
             try
             {
                 await _porfolioItemService.CreatePorfolioItemAsync(item);
-                return Ok("Item de portafolio creado correctamente.");
+                return Ok(new { message = "Item de portafolio creado correctamente." });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al crear el item de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al crear el item de portafolio: {ex.Message}" });
             }
         }
 
@@ -42,7 +42,7 @@ namespace Backend.Application.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al obtener los items de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al obtener los items de portafolio: {ex.Message}" });
             }
         }
 
@@ -52,11 +52,11 @@ namespace Backend.Application.Controllers
             try
             {
                 await _porfolioItemService.DeletePorfolioItemAsync(id);
-                return Ok($"Item de portafolio con ID {id} eliminado correctamente.");
+                return Ok(new { message = $"Item de portafolio con ID {id} eliminado correctamente." });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al eliminar el item de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al eliminar el item de portafolio: {ex.Message}" });
             }
         }
 
@@ -66,15 +66,15 @@ namespace Backend.Application.Controllers
             try
             {
                 await _porfolioItemService.UpdatePorfolioItemAsync(id, updatedItem);
-                return Ok($"Item de portafolio con ID {id} actualizado correctamente.");
+                return Ok(new { message = $"Item de portafolio con ID {id} actualizado correctamente." });
             }
             catch (InvalidOperationException ex)
             {
-                return NotFound($"Error al actualizar el item de portafolio: {ex.Message}");
+                return NotFound(new { error = $"Error al actualizar el item de portafolio: {ex.Message}" });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al actualizar el item de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al actualizar el item de portafolio: {ex.Message}" });
             }
         }
     }

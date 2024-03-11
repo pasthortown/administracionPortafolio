@@ -20,7 +20,7 @@ namespace Backend.Domain.Entities
         public string CustomerPriority { get; set; }
         public string PoPriority { get; set; }
         public string Dependency { get; set; }
-        public int Complexity { get; set; }
+        public string Complexity { get; set; }
         public decimal CountryFactor { get; set; }
         public int Weeks { get; set; }
         public int People { get; set; }
@@ -57,7 +57,7 @@ namespace Backend.Domain.Entities
             CustomerPriority = string.Empty;
             PoPriority = string.Empty;
             Progress = string.Empty;
-            Complexity = 0;
+            Complexity = string.Empty;
             CountryFactor = 0;
             Weeks = 0;
             People = 0;

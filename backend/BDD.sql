@@ -15,7 +15,7 @@ CREATE TABLE PorfolioItems (
     CustomerPriority NVARCHAR(100),
     PoPriority NVARCHAR(100),
     Dependency NVARCHAR(100),
-    Complexity INT,
+    Complexity NVARCHAR(100),
     CountryFactor DECIMAL(18, 2),
     Weeks INT,
     People INT,

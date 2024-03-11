@@ -23,11 +23,11 @@ namespace Backend.Application.Controllers
             try
             {
                 await _porfolioCostService.CreatePorfolioCostAsync(item);
-                return Ok("Costo de Item de portafolio creado correctamente.");
+                return Ok(new { message = "Costo de Item de portafolio creado correctamente." });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al crear el costo de item de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al crear el costo de item de portafolio: {ex.Message}" });
             }
         }
 
@@ -37,11 +37,17 @@ namespace Backend.Application.Controllers
             try
             {
                 var items = await _porfolioCostService.GetPorfolioCostsAsync(id);
+                
+                if (items == null || items.Count == 0)
+                {
+                    return Ok(new List<PorfolioCost>());
+                }
+
                 return Ok(items);
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al obtener los costos asociados al item de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al obtener los costos asociados al item de portafolio: {ex.Message}" });
             }
         }
 
@@ -51,11 +57,11 @@ namespace Backend.Application.Controllers
             try
             {
                 await _porfolioCostService.DeletePorfolioCostAsync(id);
-                return Ok($"Costo de Item de portafolio con ID {id} eliminado correctamente.");
+                return Ok(new { message = $"Costo de Item de portafolio con ID {id} eliminado correctamente." });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al eliminar el costo de item de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al eliminar el costo de item de portafolio: {ex.Message}" });
             }
         }
 
@@ -65,15 +71,15 @@ namespace Backend.Application.Controllers
             try
             {
                 await _porfolioCostService.UpdatePorfolioCostAsync(id, updatedItem);
-                return Ok($"Costo de item de portafolio con ID {id} actualizado correctamente.");
+                return Ok(new { message = $"Costo de item de portafolio con ID {id} actualizado correctamente." });
             }
             catch (InvalidOperationException ex)
             {
-                return NotFound($"Error al actualizar el costo de item de portafolio: {ex.Message}");
+                return NotFound(new { error = $"Error al actualizar el costo de item de portafolio: {ex.Message}" });
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al actualizar el costo de item de portafolio: {ex.Message}");
+                return BadRequest(new { error = $"Error al actualizar el costo de item de portafolio: {ex.Message}" });
             }
         }
     }
