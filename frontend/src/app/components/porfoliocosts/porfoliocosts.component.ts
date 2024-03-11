@@ -107,7 +107,7 @@ export class PorfoliocostsComponent implements OnInit, OnChanges {
     let ws_data_headers: any[] = headers_string.split(';');
     let ws_data: any[] = [];
     ws_data.push(ws_data_headers);
-    this.data.forEach((row: any) => {
+    this.rows.forEach((row: any) => {
       let ws_data_row: any[] = Object.values(row);
       ws_data.push(ws_data_row);
     });
