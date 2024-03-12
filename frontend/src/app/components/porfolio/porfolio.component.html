@@ -338,7 +338,7 @@
               <option value="Por Levantar">Por Levantar</option>
               <option value="Pruebas">Pruebas</option>
             </select> <small [hidden]="edit && row_selected == row">{{row.progress}}</small></td>
-          <td><input *ngIf="edit && row_selected == row" type="number" [(ngModel)]="row.customerPriority"/> <small [hidden]="edit && row_selected == row">{{row.customerPriority}}</small></td>
+          <td><input *ngIf="edit && row_selected == row" [(ngModel)]="row.customerPriority"/> <small [hidden]="edit && row_selected == row">{{row.customerPriority}}</small></td>
           <td>
             <select *ngIf="edit && row_selected == row" [(ngModel)]="row.poPriority">
               <option value="">Seleccione...</option>
